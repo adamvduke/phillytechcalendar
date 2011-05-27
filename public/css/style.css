@@ -5,49 +5,29 @@
 /*****************************************************************************/
 
 /* Global Reset */
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  height: 100%;
-  background-color: #000000;
-}
-
 body {
-  font: 13.34px helvetica, arial, clean, sans-serif;
-  *font-size: small;
-  text-align: center;
+  background-color: #eee;
+  font-family: 'Muli', arial, serif;
+  font-style: normal;
+  font-weight: 400;
+  text-shadow: none;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: 0em;
+  word-spacing: 0em;
+  line-height: 1.2;
+  color: #666;
 }
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%;
+header {
+  font-weight: bold;
+  font-size: 24px;
+  text-shadow: 2px 2px 2px #bbb;
 }
-
-h1 {
-  margin-bottom: .5em;
-  margin-top:1em;
-}
-
-p {
-  margin: 1em 0;
-}
-
-a {
-  color: #00a;
-}
-
-a:hover {
-  color: black;
-}
-
-a:visited {
-  color: #a0a;
-}
-
-table {
-  font-size: inherit;
-  font: 100%;
+.calendar {
+  width: 800px;
+  height: 600px;
+  margin-top: 15px;
+  border: 1px solid #999;
+  margin-left:auto;
+  margin-right:auto;
 }

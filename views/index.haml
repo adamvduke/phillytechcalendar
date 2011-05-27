@@ -1,11 +1,10 @@
-%p
-	%iframe{ :src => @src,
-					 :style => @style,
-					 :width => @width,
-					 :height => @height,
-					 :frameborder => @frame_border,
-					 :scrolling => @scrolling }
-
-%p
-	=partial :calendar_list
+%header="Philly Tech Calendar"
+.calendar-container
+  .calendar
+    %iframe{ :src => @src,
+             :style => @style,
+             :width => @width,
+             :height => @height,
+             :frameborder => @frame_border,
+             :scrolling => @scrolling }
 
