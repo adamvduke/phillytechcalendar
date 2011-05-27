@@ -6,7 +6,8 @@
 
 /* Global Reset */
 body {
-  background-color: #eee;
+  width: 100%;
+  background-color: #333;
   font-family: 'Muli', arial, serif;
   font-style: normal;
   font-weight: 400;
@@ -16,18 +17,24 @@ body {
   letter-spacing: 0em;
   word-spacing: 0em;
   line-height: 1.2;
-  color: #666;
+  color: #6A6A6A;
+  margin: 0px;
 }
 header {
+  background: #212121;
+  padding-top: 25px;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #434343;
   font-weight: bold;
   font-size: 24px;
-  text-shadow: 2px 2px 2px #bbb;
+  text-shadow: 2px 2px 2px #222;
+  overflow: hidden;
 }
 .calendar {
   width: 800px;
   height: 600px;
   margin-top: 15px;
   border: 1px solid #999;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: 15px;
 }
