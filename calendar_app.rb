@@ -37,7 +37,7 @@ class CalendarApp < Sinatra::Base
     set_iframe_properties()
     
     @src = build(calendar_ids)
-    render_template :calendar_frame
+    render_template :calendar_iframe
   end
   
   not_found do

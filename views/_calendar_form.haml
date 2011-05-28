@@ -1,3 +1,0 @@
-%form
-  - @shared_calendars.each do |calendar|
-    %input{:checked => 'true', :name => "calendar", :type => "checkbox", :value => "#{calendar.id}", :onclick => 'get_iframe_markup()'}="#{calendar.name}"

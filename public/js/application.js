@@ -1,6 +1,6 @@
 function get_iframe_markup() {
  var ids_array = [];
- $(".calendars :checked").each(function() {
+ $(".shared-calendars :checked").each(function() {
     ids_array.push($(this).val());
   });
  

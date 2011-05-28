@@ -38,4 +38,15 @@ header {
   border: 1px solid #999;
   margin-right: auto;
   margin-left: auto;
+  float: left;
+  display: inline;
 }
+.shared-calendars {
+  float: left;
+  display: inline;
+  font-size: 12px;
+  margin-right: 5px;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
