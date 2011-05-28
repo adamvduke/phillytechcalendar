@@ -1,8 +1,3 @@
-.calendar
-  %iframe{ :src => @src,
-           :style => @style,
-           :width => @width,
-           :height => @height,
-           :frameborder => @frame_border,
-           :scrolling => @scrolling }
+.calendars=render_template :calendar_form
+.calendar=render_template :calendar_frame
 

@@ -19,15 +19,28 @@ class CalendarApp < Sinatra::Base
     @src = build(ids)
 
     # other attributes for the iframe
+    set_iframe_properties()
+
+    haml :index
+  end
+  
+  def set_iframe_properties()
     @style = "border-width:0"
     @width = "800"
     @height = "600"
     @frame_border = "0"
     @scrolling = "no"
-
-    haml :index
   end
-
+  
+  post '/view' do
+    ids = params
+    puts "GOT: #{ids}"
+    #set_iframe_properties()
+    
+    #@src = build(ids)
+    #haml :calendar_frame
+  end
+  
   not_found do
     redirect to('/')
   end
