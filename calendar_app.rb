@@ -2,6 +2,7 @@ require 'rubygems' if RUBY_VERSION < "1.9"
 require 'sinatra/base'
 require 'partial_helper'
 require 'calendar_url_helper'
+require 'calendar'
 
 class CalendarApp < Sinatra::Base
   helpers Sinatra::PartialHelper
@@ -11,7 +12,10 @@ class CalendarApp < Sinatra::Base
   set :public, File.dirname(__FILE__) + '/public'
   
   get '/' do
-    ids = %w(phillytechcalendar@gmail.com h70l6uq02gllc4k9innk8qu28c@group.calendar.google.com) 
+    calendars = Calendar.all()
+    ids = calendars.collect do |calendar|
+      calendar.id
+    end
     @src = build(ids)
 
     # other attributes for the iframe
