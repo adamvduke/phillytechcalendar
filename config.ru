@@ -1,4 +1,4 @@
-$LOAD_PATH << './lib'
-require './calendar_app'
+$LOAD_PATH << './lib' << './controllers'
+require 'calendar_app'
 
 run CalendarApp.new
