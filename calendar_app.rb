@@ -12,8 +12,8 @@ class CalendarApp < Sinatra::Base
   set :public, File.dirname(__FILE__) + '/public'
   
   get '/' do
-    calendars = Calendar.all()
-    ids = calendars.collect do |calendar|
+    @shared_calendars = Calendar.all()
+    ids = @shared_calendars.collect do |calendar|
       calendar.id
     end
     @src = build(ids)
