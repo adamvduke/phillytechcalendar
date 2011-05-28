@@ -33,12 +33,11 @@ class CalendarApp < Sinatra::Base
   end
   
   post '/view' do
-    ids = params
-    puts "GOT: #{ids}"
-    #set_iframe_properties()
+    calendar_ids = params[:ids]
+    set_iframe_properties()
     
-    #@src = build(ids)
-    #haml :calendar_frame
+    @src = build(calendar_ids)
+    render_template :calendar_frame
   end
   
   not_found do

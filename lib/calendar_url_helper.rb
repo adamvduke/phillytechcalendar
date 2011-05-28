@@ -24,9 +24,14 @@ module Sinatra
 
       # could potentially build up a larger list of calendars here
       # phillytechcalendar
-      calendar_ids.each do | calendar_id |
-        url << "src=#{CGI::escape(calendar_id)}" << "&"
-        url << "color=%23" << (options[:event_color] || "182C57") << "&"
+      url << "src=#{CGI::escape('phillytechcalendar@gmail.com')}" << "&"
+      url << "color=%23182C57&"
+      
+      if calendar_ids
+        calendar_ids.each do | calendar_id |
+          url << "src=#{CGI::escape(calendar_id)}" << "&"
+          url << "color=%23" << (options[:event_color] || "182C57") << "&"
+        end
       end
       
       # time zone
