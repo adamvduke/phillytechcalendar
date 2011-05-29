@@ -16,7 +16,7 @@ class CalendarApp < Sinatra::Base
     ids = @shared_calendars.collect do |calendar|
       calendar.id
     end
-    @src = build(ids)
+    @src = build_calendar_url(ids)
 
     # other attributes for the iframe
     set_iframe_properties()
@@ -36,7 +36,7 @@ class CalendarApp < Sinatra::Base
     calendar_ids = params[:ids]
     set_iframe_properties()
     
-    @src = build(calendar_ids)
+    @src = build_calendar_url(calendar_ids)
     render_template :calendar_iframe
   end
   

@@ -1,6 +1,6 @@
 module Sinatra
   module CalendarUrlHelper
-    def build( calendar_ids, options = {})
+    def build_calendar_url( calendar_ids, options = {})
       
       # up to @style these need to be concatenated to form
       # the url for the calendar using the & character
