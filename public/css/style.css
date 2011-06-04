@@ -1,10 +1,9 @@
-/*****************************************************************************/
-/*
-/* Common
-/*
-/*****************************************************************************/
-
-/* Global Reset */
+a {
+  font-family: 'Muli', arial, serif;
+  color: #9A9A9A;
+  text-decoration: none;
+  font-size: 16px;
+}
 body {
   width: 100%;
   background-color: #333;
@@ -30,6 +29,13 @@ header {
   font-size: 24px;
   text-shadow: 2px 2px 2px #222;
   overflow: hidden;
+}
+.about {
+  margin-left: 15px;
+  margin-top: 15px;
+}
+.about h1 {
+  color: #777;
 }
 .calendar {
   width: 800px;

@@ -40,6 +40,10 @@ class CalendarApp < Sinatra::Base
     render_template :calendar_iframe
   end
   
+  get '/about' do
+    haml :about
+  end
+  
   not_found do
     redirect to('/')
   end
