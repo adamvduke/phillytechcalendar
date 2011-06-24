@@ -12,7 +12,7 @@ class CalendarApp < Sinatra::Base
   set :public, File.dirname(__FILE__) + '/public'
   
   get '/' do
-    @shared_calendars = Calendar.all()
+    @shared_calendars = Calendar.all(:order => 'name ASC')
     ids = @shared_calendars.collect do |calendar|
       calendar.id
     end
