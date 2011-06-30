@@ -1,0 +1,12 @@
+db.calendars.insert({id:'m9l9tin8bn2ioba0fchhe441h4@group.calendar.google.com', name:'Arts & Entertainment', color:'4A716C'});
+db.calendars.insert({id:'jhvnusi1r1rlvrnhhjta102go8@group.calendar.google.com', name:'Coding', color:'A32929'});
+db.calendars.insert({id:'cdrgrra4leuqamdf8edqo28350@group.calendar.google.com', name:'Community', color:'B1440E'});
+db.calendars.insert({id:'umt66d1ljm9rcgvb5ug8vd2vdc@group.calendar.google.com', name:'Design', color:'0D7813'});
+db.calendars.insert({id:'grofmrt4nivd93imrcnam82i68@group.calendar.google.com', name:'Entrepreneurial', color:'8D6F47'});
+db.calendars.insert({id:'37m0e27nin17l7fe8fg4rnt41c@group.calendar.google.com', name:'General', color:'2952A3'});
+db.calendars.insert({id:'js9oqlvesi5mt35u2dddq382hg@group.calendar.google.com', name:'Green Tech', color:'28754E'});
+db.calendars.insert({id:'u2erhjp8nsn7siokfdhh4lc8i4@group.calendar.google.com', name:'Marketing', color:'5229A3'});
+db.calendars.insert({id:'m0p2j2vmmgb46tb95ipf3keua4@group.calendar.google.com', name:'Media', color:'B1365F'});
+db.calendars.insert({id:'6piuke9fvkri3td1aomjfjkq50@group.calendar.google.com', name:'Philly Tech Week', color:'691426'});
+db.calendars.insert({id:'k5iovhe1jq182kptjeklqdqdn4@group.calendar.google.com', name:'Social Media', color:'1B887A'});
+db.calendars.insert({id:'ql25he22nkommr7ovm9ek90dhg@group.calendar.google.com', name:'User Experience', color:'528800'});
