@@ -13,14 +13,10 @@ class CalendarApp < Sinatra::Base
   
   get '/' do
     @shared_calendars = Calendar.all(:order => 'name ASC')
-    ids = @shared_calendars.collect do |calendar|
-      calendar.id
-    end
-    @src = build_calendar_url(ids)
+    @src = build_calendar_url(@shared_calendars)
 
     # other attributes for the iframe
     set_iframe_properties()
-
     haml :index
   end
   
@@ -33,10 +29,11 @@ class CalendarApp < Sinatra::Base
   end
   
   post '/view' do
-    calendar_ids = params[:ids]
-    set_iframe_properties()
+    @shared_calendars = Calendar.where(:cal_id.in => params[:ids])
+    @src = build_calendar_url(@shared_calendars)
     
-    @src = build_calendar_url(calendar_ids)
+    # other attributes for the iframe
+     set_iframe_properties()
     render_template :calendar_iframe
   end
   

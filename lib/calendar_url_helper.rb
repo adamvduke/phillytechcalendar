@@ -1,6 +1,6 @@
 module Sinatra
   module CalendarUrlHelper
-    def build_calendar_url( calendar_ids, options = {})
+    def build_calendar_url( calendars, options = {})
       
       # up to @style these need to be concatenated to form
       # the url for the calendar using the & character
@@ -22,15 +22,14 @@ module Sinatra
       # background color for the calendar
       url << "bgcolor=%23" << (options[:bg_color] || "c0c0c0") << "&"
 
-      # could potentially build up a larger list of calendars here
       # phillytechcalendar
       url << "src=#{CGI::escape('phillytechcalendar@gmail.com')}" << "&"
       url << "color=%23182C57&"
       
-      if calendar_ids
-        calendar_ids.each do | calendar_id |
-          url << "src=#{CGI::escape(calendar_id)}" << "&"
-          url << "color=%23" << (options[:event_color] || "182C57") << "&"
+      if calendars
+        calendars.each do | calendar |
+          url << "src=#{CGI::escape(calendar.cal_id)}" << "&"
+          url << "color=%23" << (calendar.color || "182C57") << "&"
         end
       end
       
