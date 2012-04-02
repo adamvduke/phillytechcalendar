@@ -1,24 +1,50 @@
-function get_iframe_markup() {
- var ids_array = [];
- $(".shared-calendars :checked").each(function() {
-    ids_array.push($(this).val());
-  });
- 
-  $.ajax({
-    url: "/view",
-    type: "POST",
-    data: {ids : ids_array},
-    success: function(data) {
-              render_iframe(data);
-             },
-    error: function(data) {
-            console.log("ERROR: " + data);
-           }
-  });
-  return false;
+function checked_calendars() {
+    var ids_array = [];
+    $(".shared-calendars :checked").each(function() {
+        ids_array.push($(this).val());
+    });
+    return ids_array;
 }
 
-function render_iframe(iframe_src) {
-  $('.calendar iframe').remove();
-  $('.calendar').append(iframe_src);
-};
+function refresh_calendars(data) {
+    $('.calendar').fullCalendar({
+        // set the list of events
+        eventSources: data
+    })
+}
+
+function get_calendars() {
+    $.ajax({
+        url: "/calendars",
+        type: "GET",
+        data: {
+            ids: checked_calendars()
+        },
+        success: function(data) {
+            refresh_calendars(data);
+        },
+        error: function(data) {
+            console.log("ERROR: " + data);
+        }
+    })
+}
+
+function calendar_checked() {
+    $.ajax({
+        url: "/calendars",
+        type: "POST",
+        data: {
+            ids: checked_calendars()
+        },
+        success: function(data) {
+            refresh_calendars(data);
+        },
+        error: function(data) {
+            console.log("ERROR: " + data);
+        }
+    });
+}
+
+$(document).ready(function(){
+	get_calendars();
+})

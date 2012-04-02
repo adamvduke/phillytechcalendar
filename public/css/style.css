@@ -40,12 +40,10 @@ header {
 .calendar {
   width: 900px;
   margin-top: 15px;
-  border: 1px solid #999;
   margin-right: auto;
   margin-left: auto;
   float: left;
   display: inline;
-  position: fixed;
 }
 .shared-calendars {
   float: left;

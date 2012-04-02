@@ -1,46 +1,42 @@
 require 'rubygems' if RUBY_VERSION < "1.9"
 require 'sinatra/base'
 require 'partial_helper'
-require 'calendar_url_helper'
 require 'calendar'
+require 'json'
 
 class CalendarApp < Sinatra::Base
   helpers Sinatra::PartialHelper
-  helpers Sinatra::CalendarUrlHelper
-  
+
   set :static, true
   set :public, File.dirname(__FILE__) + '/public'
-  
-  get '/' do
-    @shared_calendars = Calendar.all(:order => 'name ASC')
-    @src = build_calendar_url(@shared_calendars)
 
-    # other attributes for the iframe
-    set_iframe_properties()
+  before do
+    @all_calendars = Calendar.all(:order => 'name ASC')
+    if params[:ids] && !params[:ids].empty?
+      @checked_calendars = Calendar.where(:cal_id.in => params[:ids]).all(:order => 'name ASC')
+    else
+      @checked_calendars = @all_calendars
+    end
+  end
+
+  get '/' do
     haml :index
   end
-  
-  def set_iframe_properties()
-    @style = "border-width:0"
-    @width = "800"
-    @height = "600"
-    @frame_border = "0"
-    @scrolling = "no"
+
+  get '/calendars' do
+    content_type 'application/json', :charset => 'utf-8'
+    JSON.generate(@checked_calendars)
   end
-  
-  post '/view' do
-    @shared_calendars = Calendar.where(:cal_id.in => params[:ids])
-    @src = build_calendar_url(@shared_calendars)
-    
-    # other attributes for the iframe
-     set_iframe_properties()
-    render_template :calendar_iframe
+
+  post '/calendars' do
+    content_type 'application/json', :charset => 'utf-8'
+    JSON.generate(@checked_calendars)
   end
-  
+
   get '/about' do
     haml :about
   end
-  
+
   not_found do
     redirect to('/')
   end
