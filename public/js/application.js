@@ -7,10 +7,10 @@ function checked_calendars() {
 }
 
 function refresh_calendars(data) {
-    $('.calendar').fullCalendar({
-        // set the list of events
-        eventSources: data
-    })
+    $('.calendar').fullCalendar('removeEvents');
+    $.each(data, function(index, value) {
+        $('.calendar').fullCalendar('addEventSource', value);
+    });
 }
 
 function get_calendars() {
@@ -45,6 +45,7 @@ function calendar_checked() {
     });
 }
 
-$(document).ready(function(){
-	get_calendars();
+$(document).ready(function() {
+    $('.calendar').fullCalendar({});
+    get_calendars();
 })

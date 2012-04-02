@@ -15,7 +15,7 @@ class CalendarApp < Sinatra::Base
     if params[:ids] && !params[:ids].empty?
       @checked_calendars = Calendar.where(:cal_id.in => params[:ids]).all(:order => 'name ASC')
     else
-      @checked_calendars = @all_calendars
+      @checked_calendars = []
     end
   end
 
