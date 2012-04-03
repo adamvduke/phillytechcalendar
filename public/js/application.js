@@ -46,6 +46,9 @@ function calendar_checked() {
 }
 
 $(document).ready(function() {
-    $('.calendar').fullCalendar({});
+    $('.calendar').fullCalendar({
+	theme: true,
+	weekMode: 'liquid'
+});
     get_calendars();
 })

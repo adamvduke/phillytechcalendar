@@ -38,12 +38,13 @@ header {
   color: #777;
 }
 .calendar {
-  width: 900px;
+  width: 1000px;
   margin-top: 15px;
   margin-right: auto;
-  margin-left: auto;
+  margin-left: 15px;
   float: left;
   display: inline;
+  position: absolute;
 }
 .shared-calendars {
   float: left;
@@ -53,4 +54,4 @@ header {
   margin-top: 15px;
   margin-left: 15px;
 }
-
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight  {border: 1px solid #555555; background: #000000 url(images/ui-bg_loop_25_000000_21x21.png) 50% 50% repeat; color: #ffffff; }
