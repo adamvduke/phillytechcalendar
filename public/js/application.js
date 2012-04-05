@@ -13,7 +13,7 @@ function refresh_calendars(data) {
     });
 }
 
-function get_calendars() {
+function get_checked_calendars() {
     $.ajax({
         url: "/calendars",
         type: "GET",
@@ -29,26 +29,10 @@ function get_calendars() {
     })
 }
 
-function calendar_checked() {
-    $.ajax({
-        url: "/calendars",
-        type: "POST",
-        data: {
-            ids: checked_calendars()
-        },
-        success: function(data) {
-            refresh_calendars(data);
-        },
-        error: function(data) {
-            console.log("ERROR: " + data);
-        }
-    });
-}
-
 $(document).ready(function() {
     $('.calendar').fullCalendar({
 	theme: true,
 	weekMode: 'liquid'
 });
-    get_calendars();
+    get_checked_calendars();
 })

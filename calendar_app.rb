@@ -28,11 +28,6 @@ class CalendarApp < Sinatra::Base
     JSON.generate(@checked_calendars)
   end
 
-  post '/calendars' do
-    content_type 'application/json', :charset => 'utf-8'
-    JSON.generate(@checked_calendars)
-  end
-
   get '/about' do
     haml :about
   end
