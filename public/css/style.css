@@ -2,7 +2,6 @@ a {
   font-family: 'Muli', arial, serif;
   color: #9A9A9A;
   text-decoration: none;
-  font-size: 16px;
 }
 body {
   width: 100%;
@@ -46,6 +45,18 @@ header {
   display: inline;
   position: absolute;
 }
+.calendar-control {
+  width: 175px;
+  border-bottom: 1px solid black;
+}
+.calendar-control .toggle {
+  display: inline;
+}
+.calendar-control .subscribe {
+  display: inline;
+  float: right;
+}
+
 .shared-calendars {
   float: left;
   display: inline;

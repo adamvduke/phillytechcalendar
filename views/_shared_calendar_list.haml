@@ -1,3 +1,7 @@
 - @all_calendars.each do |calendar|
-  %input{:checked => 'true', :name => "calendar", :type => "checkbox", :value => "#{calendar.cal_id}", :onclick => 'get_checked_calendars()'}="#{calendar.name}"
-  %br
+  .calendar-control
+    .toggle
+      %input{:checked => 'true', :name => "calendar", :type => "checkbox", :value => "#{calendar.cal_id}", :onclick => 'get_checked_calendars()'}
+    = "#{calendar.name}"
+    .subscribe
+      %a{:href => "https://www.google.com/calendar/ical/#{calendar.cal_id}%40group.calendar.google.com/public/basic.ics"}="ics"
