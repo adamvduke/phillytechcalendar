@@ -8,7 +8,7 @@ class Calendar
   def to_json(arg1, arg2)
     url = %Q|"https://www.google.com/calendar/feeds/#{self.cal_id}%40group.calendar.google.com/public/basic"|
     color = self.color
-    json = %Q|{"url": #{url}, "color": "##{color}", "textColor": "black"}|
+    json = %Q|{"cal_id": "#{cal_id}", "url": #{url}, "color": "##{color}", "textColor": "black"}|
     json.to_s
   end
 end
