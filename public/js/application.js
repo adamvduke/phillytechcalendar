@@ -38,7 +38,7 @@ function refresh_calendars(calendars) {
 function get_checked_calendars() {
 	$.ajax({
 		url: "/calendars",
-		type: "GET",
+		type: "POST",
 		data: {
 			ids: checked_calendar_ids()
 		},
