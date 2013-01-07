@@ -10,9 +10,9 @@ class CalendarApp < Sinatra::Base
   set :public, File.dirname(__FILE__) + '/public'
 
   before do
-    @all_calendars = Calendar.all(:order => 'name ASC')
+    @all_calendars = Calendar.all( order: 'name ASC' )
     if params[:ids] && !params[:ids].empty?
-      @checked_calendars = Calendar.where(:cal_id.in => params[:ids]).all(:order => 'name ASC')
+      @checked_calendars = Calendar.where(:cal_id.in => params[:ids]).all( order: 'name ASC' )
     else
       @checked_calendars = []
     end
@@ -23,7 +23,7 @@ class CalendarApp < Sinatra::Base
   end
 
   get '/calendars' do
-    content_type 'application/json', :charset => 'utf-8'
+    content_type 'application/json', charset: 'utf-8'
     JSON.generate(@checked_calendars)
   end
 
