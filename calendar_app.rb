@@ -9,7 +9,7 @@ class CalendarApp < Sinatra::Base
   set :static, true
   set :public, File.dirname(__FILE__) + '/public'
 
-  before do
+  before %r|^(?!/about$)| do
     @all_calendars = Calendar.all( order: 'name ASC' )
     if params[:ids] && !params[:ids].empty?
       @checked_calendars = Calendar.where(:cal_id.in => params[:ids]).all( order: 'name ASC' )
