@@ -7,7 +7,7 @@ class CalendarApp < Sinatra::Base
   helpers Sinatra::PartialHelper
 
   set :static, true
-  set :public, File.dirname(__FILE__) + '/public'
+  set :public_dir, File.dirname(__FILE__) + '/public'
 
   before %r|^(?!/about$)| do
     @all_calendars = Calendar.all( order: 'name ASC' )

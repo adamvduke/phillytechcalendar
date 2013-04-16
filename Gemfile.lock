@@ -1,37 +1,44 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    activemodel (3.0.7)
-      activesupport (= 3.0.7)
-      builder (~> 2.1.2)
-      i18n (~> 0.5.0)
-    activesupport (3.0.7)
-    bson (1.3.1)
-    bson_ext (1.3.1)
-    builder (2.1.2)
-    haml (3.1.1)
-    i18n (0.5.0)
-    json (1.5.3)
-    mongo (1.3.1)
-      bson (>= 1.3.1)
-    mongo_mapper (0.9.1)
+    activemodel (3.2.13)
+      activesupport (= 3.2.13)
+      builder (~> 3.0.0)
+    activesupport (3.2.13)
+      i18n (= 0.6.1)
+      multi_json (~> 1.0)
+    bson (1.8.5)
+    bson_ext (1.8.5)
+      bson (~> 1.8.5)
+    builder (3.0.4)
+    haml (4.0.2)
+      tilt
+    i18n (0.6.1)
+    json (1.7.7)
+    mongo (1.8.5)
+      bson (~> 1.8.5)
+    mongo_mapper (0.12.0)
       activemodel (~> 3.0)
       activesupport (~> 3.0)
-      plucky (~> 0.3.8)
-    plucky (0.3.8)
-      mongo (~> 1.3)
-    rack (1.3.0)
-    sinatra (1.2.6)
-      rack (~> 1.1)
-      tilt (>= 1.2.2, < 2.0)
-    tilt (1.3.1)
+      plucky (~> 0.5.2)
+    multi_json (1.7.2)
+    plucky (0.5.2)
+      mongo (~> 1.5)
+    rack (1.5.2)
+    rack-protection (1.5.0)
+      rack
+    sinatra (1.4.2)
+      rack (~> 1.5, >= 1.5.2)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    tilt (1.3.7)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  bson_ext
-  haml
-  json
-  mongo_mapper
-  sinatra
+  bson_ext (~> 1.8.5)
+  haml (~> 4.0.2)
+  json (~> 1.7.7)
+  mongo_mapper (~> 0.12.0)
+  sinatra (~> 1.4.2)
