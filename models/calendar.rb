@@ -14,6 +14,6 @@ class Calendar
 
   private
     def calendar_url
-      %Q|"https://www.google.com/calendar/feeds/#{cal_id}%40group.calendar.google.com/public/basic"|
+      %Q|"http://www.google.com/calendar/feeds/#{cal_id}%40group.calendar.google.com/public/basic"|
     end
 end
