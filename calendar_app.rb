@@ -23,6 +23,7 @@ class CalendarApp < Sinatra::Base
   end
 
   post '/calendars' do
+    cache_control :public, :no_cache
     content_type 'application/json', charset: 'utf-8'
     JSON.generate(@checked_calendars)
   end
