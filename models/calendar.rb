@@ -8,7 +8,7 @@ class Calendar
   Calendar.ensure_index [[:cal_id, 1]], :unique => true
 
   def to_json(arg1, arg2)
-    json = %Q|{"cal_id": "#{cal_id}", "color": "##{color}", "name": "#{name}", "textColor": "black", "url": #{calendar_url}}|
+    json = %Q|{"cal_id":"#{cal_id}","color":"##{color}","name":"#{name}","textColor":"black","url":#{calendar_url}}|
     json.to_s
   end
 
