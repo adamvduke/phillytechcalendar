@@ -2,10 +2,13 @@ require 'sinatra/base'
 require 'partial_helper'
 require 'calendar'
 require 'json'
+require 'sinatra/r18n'
 
 class CalendarApp < Sinatra::Base
   helpers Sinatra::PartialHelper
+  register Sinatra::R18n
 
+  set :root, File.dirname(__FILE__)
   set :static, true
   set :public_dir, File.dirname(__FILE__) + '/public'
 
